@@ -34,7 +34,7 @@ export default class List {
         required>
       <button type="submit" class="btn btn-dark">Submit</button>
       <button class="btn btn-danger" type="button" onclick="app.ListController.deleteList('${
-        this.items
+        this.id
       }')">X</button>
     </form>
     </div>

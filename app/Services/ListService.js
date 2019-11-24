@@ -1,5 +1,5 @@
 import List from "../Models/List.js";
-import _store from "../store.js";
+// import _store from "../store.js";
 import store from "../store.js";
 import Listitem from "../Models/listitem.js";
 
@@ -11,6 +11,7 @@ class ListService {
 
   addList(listName) {
     store.State.list.push(new List(listName));
+    store.saveState();
   }
 
   addToList(listItemName, listId) {
@@ -22,6 +23,7 @@ class ListService {
         allLists[i].items.push(new Listitem(listItemName));
     }
     console.log("added list item");
+    store.saveState();
   }
 
   deleteListItem(listId, listItemId) {
@@ -36,13 +38,12 @@ class ListService {
         }
       }
     }
+    store.saveState();
   }
+
   deleteList(listId) {
-    debugger;
-    let listComplete = store.State.list;
-    for (let i = 0; i < listComplete.length; i++) {
-      if (listComplete[i].id == listId) listComplete[i].items.splice(i, 1);
-    }
+    store.State.list = store.State.list.filter(cur => cur.id != listId);
+    store.saveState();
   }
 
   // addListitem(listitemData) {
