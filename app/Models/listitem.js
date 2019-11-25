@@ -9,7 +9,7 @@ export default class ListItem {
   template(listId) {
     return `
     <li>${this.name}
-    <button class="btn btn-danger" type="button" onclick="app.ListController.deleteListItem('${listId}','${this.id}')">X</button>
+    <button class="btn btn-danger" id="deleteButton" type="button" onclick="app.ListController.deleteListItem('${listId}','${this.id}')">X</button>
     </li>
     `;
   }

@@ -33,12 +33,17 @@ export default class ListController {
 
   deleteListItem(listId, listItemId) {
     console.log(`delete list item: ${listId}, ${listItemId}`);
+    let r = confirm("Delete...Really?");
+    if (r != true) return;
     ListService.deleteListItem(listId, listItemId);
     _drawLists();
   }
 
   deleteList(listId) {
+    let r = confirm("Delete...Really?");
+    if (r != true) return;
     ListService.deleteList(listId);
+
     _drawLists();
   }
 
