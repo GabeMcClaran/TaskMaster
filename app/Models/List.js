@@ -45,7 +45,7 @@ export default class List {
   drawItems() {
     //debugger;
     let template = ``;
-    this.items.forEach(item => (template += item.template(this.id)));
+    this.items.forEach(List => (template += List.template(this.id)));
     return template;
   }
 }
