@@ -1,9 +1,9 @@
 import { generateId } from "../utils.js";
 
-export default class Listitem {
-  constructor(Item) {
-    this.id = generateId();
-    this.name = Item;
+export default class ListItem {
+  constructor(name, id) {
+    this.id = id || generateId();
+    this.name = name;
   }
 
   template(listId) {

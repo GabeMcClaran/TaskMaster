@@ -7,6 +7,7 @@ function _drawLists() {
   lists.forEach(list => (template += list.template));
   document.querySelector("#list").innerHTML = template;
 }
+_drawLists();
 
 //Public
 export default class ListController {
