@@ -31,13 +31,11 @@ class Store {
   //NOTE this method will get the lists from local storage at the start of the app
   loadState() {
     let saved = JSON.parse(localStorage.getItem("state"));
-    _state = saved;
     if (saved) {
-      console.log(saved);
+      _state = saved;
       _state.list = _state.list.map(
         cur => new List(cur.name, cur.id, cur.items)
       );
-      console.log(_state);
     }
   }
 }
